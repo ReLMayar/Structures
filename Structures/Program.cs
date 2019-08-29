@@ -123,7 +123,43 @@ namespace Structures
             {
                 Console.Write(items + " ");
             }
+            Console.WriteLine('\n');
+            #endregion
+
+            #region Stack
+            Console.WriteLine("Stack" + '\n');
+            var stack = new Models.Stack.StackList<int>();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+
+            Console.WriteLine("Stack Peek:");
+            Console.WriteLine(stack.Peek());
+            Console.WriteLine("Stack Pop:");
+            Console.Write(stack.Pop() + " ");
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine("Stack Peek:");
+            Console.WriteLine(stack.Peek());
             Console.WriteLine();
+            #endregion
+
+            #region Queue
+            Console.WriteLine("Queue" + '\n');
+            var queue = new Models.Queue.QueueList<int>();
+
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+            queue.Enqueue(4);
+            queue.Enqueue(5);
+
+            Console.WriteLine("Queue Top:");
+            Console.WriteLine(queue.Top());
+            Console.WriteLine("Queue Dequeue:");
+            Console.Write(queue.Dequeue() + " ");
+            Console.WriteLine(queue.Dequeue());
+            Console.WriteLine("Queue Top:");
+            Console.WriteLine(queue.Top());
             #endregion
         }
     }
