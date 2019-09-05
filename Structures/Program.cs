@@ -160,7 +160,37 @@ namespace Structures
             Console.WriteLine(queue.Dequeue());
             Console.WriteLine("Queue Top:");
             Console.WriteLine(queue.Top());
+            Console.WriteLine('\n');
             #endregion
+
+            var binarySearchTree = new Models.BinarySearchTree.BinarySearchTree<int>();
+            binarySearchTree.AddData(7);
+            binarySearchTree.AddData(5);
+            binarySearchTree.AddData(4);
+            binarySearchTree.AddData(6);
+            binarySearchTree.AddData(8);
+            binarySearchTree.AddData(9);
+
+            var preOrder = binarySearchTree.PreOrder();
+            foreach(var preOrders in preOrder)
+            {
+                Console.Write(preOrders + " ");
+            }
+            Console.WriteLine();
+
+            var postOrder = binarySearchTree.PostOrder();
+            foreach (var postOrders in postOrder)
+            {
+                Console.Write(postOrders + " ");
+            }
+            Console.WriteLine();
+
+            var inOrder = binarySearchTree.InOrder();
+            foreach (var inOrders in inOrder)
+            {
+                Console.Write(inOrders + " ");
+            }
+            Console.WriteLine();
         }
     }
 }
