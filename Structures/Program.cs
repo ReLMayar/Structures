@@ -163,6 +163,7 @@ namespace Structures
             Console.WriteLine('\n');
             #endregion
 
+            #region BinarySearchTree
             var binarySearchTree = new Models.BinarySearchTree.BinarySearchTree<int>();
             binarySearchTree.AddData(7);
             binarySearchTree.AddData(5);
@@ -190,7 +191,43 @@ namespace Structures
             {
                 Console.Write(inOrders + " ");
             }
-            Console.WriteLine();
+            Console.WriteLine('\n');
+            #endregion
+
+            #region HashTable
+            var hashTable = new Models.HashTable.HashTable<int>(5);
+            hashTable.AddData(1);
+            hashTable.AddData(2);
+            hashTable.AddData(1);
+            hashTable.AddData(1);
+            #endregion
+
+            #region Dictionary
+            var myDictionary = new Models.Dictionary.MyDictionary<int>(5);
+            myDictionary.AddData(1);
+            myDictionary.AddData(3);
+            myDictionary.AddData(5);
+            myDictionary.AddData(5);
+            myDictionary.AddData(10);
+
+            Console.WriteLine(myDictionary.Search(10));
+            Console.WriteLine(myDictionary.Search(15));
+            #endregion
+
+            #region BinaryHeap
+            var binaryHeap = new Models.BinaryHeap.BinaryHeap<int>();
+
+            binaryHeap.AddData(1);
+            binaryHeap.AddData(3);
+            binaryHeap.AddData(5);
+            binaryHeap.AddData(4);
+            binaryHeap.AddData(2);
+
+            for (int i = 0; i < 5; i++)
+            {
+                var res = binaryHeap.Sort();
+            }
+            #endregion
         }
     }
 }

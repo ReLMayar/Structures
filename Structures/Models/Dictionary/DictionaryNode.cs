@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 
-namespace Structures.Models.HashTable
+namespace Structures.Models.Dictionary
 {
-    public class HashTableNode<T>
+    public class DictionaryNode<T>
     {
         public int Key { get; set; }
-        private List<T> data { get; set; }
+        private T data { get; set; }
 
-        public List<T> Data
+        public T Data
         {
             get => data;
             set
             {
-                if(value is List<T>)
+                if (value is T)
                 {
                     data = value;
                 }
@@ -21,10 +20,10 @@ namespace Structures.Models.HashTable
             }
         }
 
-        public HashTableNode(int key)
+        public DictionaryNode(int key)
         {
             Key = key;
-            Data = new List<T>();
+            Data = data;
         }
     }
 }

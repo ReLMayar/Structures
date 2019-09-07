@@ -4,11 +4,16 @@ namespace Structures.Models.HashTable
 {
     public class HashTable<T>
     {
-        private Node<T>[] items;
+        private HashTableNode<T>[] items;
 
         public HashTable(int size)
         {
-            items = new Node<T>[size];
+            items = new HashTableNode<T>[size];
+
+            for (int i = 0; i < items.Length; i++)
+            {
+                items[i] = new HashTableNode<T>(i);
+            }
         }
 
         public void AddData(T item)
