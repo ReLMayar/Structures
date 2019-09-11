@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Structures.Models.BinaryHeap
 {
-    public class BinaryHeap<T> where T : IComparable
+    public class BinaryHeap<T> : IEnumerable<T> where T : IComparable
     {
         private List<T> items = new List<T>();
 
@@ -86,6 +87,19 @@ namespace Structures.Models.BinaryHeap
         private int GetParent(int current)
         {
             return (current - 1) / 2;
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < items.Count; i++)
+            {
+                yield return items[i];
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -164,6 +164,7 @@ namespace Structures
             #endregion
 
             #region BinarySearchTree
+            Console.WriteLine("Binary Search Tree" + '\n');
             var binarySearchTree = new Models.BinarySearchTree.BinarySearchTree<int>();
             binarySearchTree.AddData(7);
             binarySearchTree.AddData(5);
@@ -172,6 +173,7 @@ namespace Structures
             binarySearchTree.AddData(8);
             binarySearchTree.AddData(9);
 
+            Console.WriteLine("BinarySearchTree PreOrder:");
             var preOrder = binarySearchTree.PreOrder();
             foreach(var preOrders in preOrder)
             {
@@ -179,6 +181,7 @@ namespace Structures
             }
             Console.WriteLine();
 
+            Console.WriteLine("BinarySearchTree PostOrder:");
             var postOrder = binarySearchTree.PostOrder();
             foreach (var postOrders in postOrder)
             {
@@ -186,6 +189,7 @@ namespace Structures
             }
             Console.WriteLine();
 
+            Console.WriteLine("BinarySearchTree InOrder");
             var inOrder = binarySearchTree.InOrder();
             foreach (var inOrders in inOrder)
             {
@@ -195,14 +199,27 @@ namespace Structures
             #endregion
 
             #region HashTable
-            var hashTable = new Models.HashTable.HashTable<int>(5);
+            Console.WriteLine("Hash Table" + '\n');
+            var hashTable = new Models.HashTable.HashTable<int>(8);
             hashTable.AddData(1);
             hashTable.AddData(2);
             hashTable.AddData(1);
-            hashTable.AddData(1);
+            hashTable.AddData(4);
+            hashTable.AddData(5);
+            hashTable.AddData(4);
+            hashTable.AddData(9);
+            hashTable.AddData(7);
+
+            Console.WriteLine("Hash table search:");
+            Console.WriteLine(hashTable.Search(1));
+            Console.WriteLine(hashTable.Search(5));
+            Console.WriteLine(hashTable.Search(10));
+
+            Console.WriteLine('\n');
             #endregion
 
             #region Dictionary
+            Console.WriteLine("Dictionary" + '\n');
             var myDictionary = new Models.Dictionary.MyDictionary<int>(5);
             myDictionary.AddData(1);
             myDictionary.AddData(3);
@@ -210,11 +227,29 @@ namespace Structures
             myDictionary.AddData(5);
             myDictionary.AddData(10);
 
+            foreach (var dict in myDictionary)
+            {
+                Console.Write(dict + " ");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Dictionary Search 10, 15:");
             Console.WriteLine(myDictionary.Search(10));
             Console.WriteLine(myDictionary.Search(15));
+
+            Console.WriteLine("Dictionary Remove 10, 1:");
+            myDictionary.Remove(10);
+            myDictionary.Remove(1);
+
+            foreach (var dict in myDictionary)
+            {
+                Console.Write(dict + " ");
+            }
+            Console.WriteLine('\n');
             #endregion
 
             #region BinaryHeap
+            Console.WriteLine("Binary Heap" + '\n');
             var binaryHeap = new Models.BinaryHeap.BinaryHeap<int>();
 
             binaryHeap.AddData(1);
@@ -222,11 +257,42 @@ namespace Structures
             binaryHeap.AddData(5);
             binaryHeap.AddData(4);
             binaryHeap.AddData(2);
+            binaryHeap.AddData(9);
+            binaryHeap.AddData(10);
+            binaryHeap.AddData(7);
+            binaryHeap.AddData(17);
+            binaryHeap.AddData(72);
 
-            for (int i = 0; i < 5; i++)
+            foreach (var heap in binaryHeap)
             {
-                var res = binaryHeap.Sort();
+                Console.Write(heap + " ");
             }
+            Console.WriteLine();
+
+            Console.WriteLine("Sorted BinaryHeap:");
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write(binaryHeap.Sort() + " ");
+            }
+
+            Console.WriteLine('\n');
+            #endregion
+
+            #region PrefixTree
+            Console.WriteLine("Prefix Tree" + '\n');
+            var prefixtree = new Models.PrefixTree.PrefixTree<int>();
+            prefixtree.AddData("привет", 100);
+            prefixtree.AddData("пока", 50);
+            prefixtree.AddData("кокос", 200);
+
+            Console.WriteLine("PrefixTree Remove:");
+            Console.WriteLine(prefixtree.Remove("покрытие"));
+            Console.WriteLine(prefixtree.Remove("пока"));
+
+            Console.WriteLine("PrefixTree Search:");
+            Console.WriteLine(prefixtree.Search("покрытие"));
+            Console.WriteLine(prefixtree.Search("привет"));
+            Console.WriteLine(prefixtree.Search("пока"));
             #endregion
         }
     }

@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using Structures.Models.HashTable;
 
 namespace Structures.Models.Dictionary
 {
-    public class MyDictionary<T>
+    public class MyDictionary<T> : IEnumerable<T>
     {
         private DictionaryNode<T>[] items;
 
@@ -79,6 +80,22 @@ namespace Structures.Models.Dictionary
         private int GetHash(T data)
         {
             return data.GetHashCode() % items.Length;
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < items.Length; i++)
+            {
+                yield return items[i].Data;
+            }
+        }
+
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        {
+            for (int i = 0; i < items.Length; i++)
+            {
+                yield return items[i].Data;
+            }
         }
     }
 }
